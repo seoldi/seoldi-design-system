@@ -1,0 +1,288 @@
+/* =============================================================
+   SEOLDI GRAPHICS — Web Component Library v1.0 (2025)
+   사용법: brand-tokens.css 로드 후 이 파일을 함께 로드할 것
+   @import '../seoldi-Branding/brand-tokens.css';
+   @import '../seoldi-Branding/sg-components.css';
+   ============================================================= */
+
+/* ── Reset & Base ─────────────────────────────────────────── */
+.sg-btn, .sg-tag, .sg-pill, .sg-card {
+  box-sizing: border-box;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BUTTONS
+   ══════════════════════════════════════════════════════════ */
+
+.sg-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 100px;
+  font-family: var(--sg-font-en);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  text-decoration: none;
+  line-height: 1;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.sg-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.sg-btn:active {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Variants */
+.sg-btn-primary {
+  background: var(--sg-royal);
+  color: var(--sg-cream);
+}
+
+.sg-btn-outline {
+  background: transparent;
+  color: var(--sg-royal);
+  border: 2px solid var(--sg-royal);
+}
+
+.sg-btn-ghost {
+  background: transparent;
+  color: var(--sg-ink);
+  border: 2px solid var(--sg-cream-dk);
+}
+
+.sg-btn-dark {
+  background: var(--sg-ink);
+  color: var(--sg-cream);
+}
+
+.sg-btn-orange {
+  background: transparent;
+  color: var(--sg-orange);
+  border: 2px solid var(--sg-orange);
+}
+
+/* Sizes */
+.sg-btn-sm {
+  padding: 8px 16px;
+  font-size: 12px;
+}
+
+.sg-btn-lg {
+  padding: 16px 36px;
+  font-size: 16px;
+}
+
+/* ══════════════════════════════════════════════════════════
+   BADGES & TAGS
+   ══════════════════════════════════════════════════════════ */
+
+.sg-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-family: var(--sg-font-en);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Pill variant */
+.sg-pill {
+  border-radius: 100px;
+  padding: 5px 14px;
+}
+
+/* Solid tags */
+.sg-tag-royal  { background: var(--sg-royal);  color: var(--sg-cream); }
+.sg-tag-dark   { background: var(--sg-ink);    color: var(--sg-cream); }
+.sg-tag-orange { background: var(--sg-orange); color: var(--sg-cream); }
+.sg-tag-cream  { background: var(--sg-cream);  color: var(--sg-royal); border: 1px solid var(--sg-cream-dk); }
+
+/* Outline tags */
+.sg-tag-outline-royal {
+  background: transparent;
+  color: var(--sg-royal);
+  border: 1.5px solid var(--sg-royal);
+}
+
+.sg-tag-outline-dark {
+  background: transparent;
+  color: var(--sg-ink);
+  border: 1.5px solid var(--sg-cream-dk);
+}
+
+.sg-tag-outline-orange {
+  background: rgba(249, 115, 22, 0.08);
+  color: var(--sg-orange);
+  border: 1.5px solid var(--sg-orange);
+}
+
+/* ══════════════════════════════════════════════════════════
+   ACCENT LINES & DIVIDERS
+   ══════════════════════════════════════════════════════════ */
+
+.sg-accent-line {
+  display: block;
+  width: 56px;
+  height: 4px;
+  background: var(--sg-orange);
+  flex-shrink: 0;
+}
+
+.sg-accent-line-sm { width: 32px; height: 3px; }
+.sg-accent-line-lg { width: 80px; height: 4px; }
+
+/* Eyebrow pattern (섹션 상단 레이블 패턴) */
+.sg-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.sg-eyebrow-text {
+  font-family: var(--sg-font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--sg-ink);
+  opacity: 0.75;
+  white-space: nowrap;
+}
+
+.sg-eyebrow-line {
+  flex: 1;
+  height: 1px;
+  background: var(--sg-cream-dk);
+}
+
+/* Dividers */
+.sg-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--sg-cream-dk);
+  border: none;
+  margin: 0;
+}
+
+.sg-divider-dark {
+  background: rgba(185, 199, 248, 0.15);
+}
+
+/* ══════════════════════════════════════════════════════════
+   CARDS
+   ══════════════════════════════════════════════════════════ */
+
+.sg-card {
+  background: #ffffff;
+  border: 1px solid var(--sg-cream-dk);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.sg-card-blue {
+  background: var(--sg-royal);
+  color: var(--sg-cream);
+  border: none;
+}
+
+.sg-card-dark {
+  background: var(--sg-ink);
+  color: var(--sg-cream);
+  border: none;
+}
+
+.sg-card-img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--sg-peri);
+  display: block;
+}
+
+.sg-card-body {
+  padding: 20px 22px;
+}
+
+.sg-card-tag {
+  margin-bottom: 10px;
+}
+
+.sg-card-title {
+  font-family: var(--sg-font-en);
+  font-weight: 800;
+  font-size: 20px;
+  color: var(--sg-royal);
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.sg-card-blue .sg-card-title,
+.sg-card-dark .sg-card-title {
+  color: var(--sg-cream);
+}
+
+.sg-card-desc {
+  margin-top: 8px;
+  font-family: var(--sg-font-kr);
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.sg-card-blue .sg-card-desc { color: var(--sg-peri); }
+.sg-card-dark .sg-card-desc { color: var(--sg-peri); opacity: 0.85; }
+
+.sg-card-meta {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--sg-cream-dk);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--sg-font-mono);
+  font-size: 11px;
+  color: var(--sg-orange);
+  letter-spacing: 0.14em;
+  font-weight: 700;
+}
+
+.sg-card-blue .sg-card-meta,
+.sg-card-dark .sg-card-meta {
+  border-top-color: rgba(185, 199, 248, 0.2);
+}
+
+/* ══════════════════════════════════════════════════════════
+   UTILITY CLASSES
+   ══════════════════════════════════════════════════════════ */
+
+/* Typography helpers */
+.sg-font-en    { font-family: var(--sg-font-en); }
+.sg-font-kr    { font-family: var(--sg-font-kr); }
+.sg-font-mono  { font-family: var(--sg-font-mono); }
+
+/* Color helpers */
+.sg-text-royal  { color: var(--sg-royal); }
+.sg-text-cream  { color: var(--sg-cream); }
+.sg-text-orange { color: var(--sg-orange); }
+.sg-text-peri   { color: var(--sg-peri); }
+.sg-text-ink    { color: var(--sg-ink); }
+
+/* Background helpers */
+.sg-bg-royal { background-color: var(--sg-royal); }
+.sg-bg-cream { background-color: var(--sg-cream); }
+.sg-bg-ink   { background-color: var(--sg-ink); }

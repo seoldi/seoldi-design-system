@@ -62,6 +62,19 @@ const DOCS = [
     badge: 'PLAYBOOK',
     Preview: HubPreviewPlaybook,
   },
+  {
+    no: '05',
+    href: 'Components.html',
+    title: 'Web Components',
+    krTitle: '웹 컴포넌트 라이브러리',
+    desc: '버튼 · 배지 · 카드 · 타입 스케일 · 컬러 토큰. brand-tokens.css + sg-components.css를 로드하면 바로 사용. 클립보드 복사 지원.',
+    meta: ['6 sections', 'Copy & Paste', 'seoldi.com · seoldi-ops'],
+    bg: SG.royal,
+    fg: SG.cream,
+    accent: SG.orange,
+    badge: 'COMPONENTS',
+    Preview: HubPreviewComponents,
+  },
 ];
 
 function HubPreviewPortfolio() {
@@ -135,6 +148,49 @@ function HubPreviewGuideline() {
       <div style={{ display: 'flex', gap: 6, marginTop: 2 }}>
         <SGLogoMark size={28} cdColor={SG.cream} bangColor={SG.orange} footColor={SG.ink} />
         <SGLogoMark size={28} cdColor={SG.royal} bangColor={SG.orange} footColor={SG.cream} />
+      </div>
+    </div>
+  );
+}
+
+function HubPreviewComponents() {
+  const btnStyle = {
+    display: 'inline-block', padding: '5px 12px', borderRadius: 100,
+    fontFamily: SG.sans, fontWeight: 700, fontSize: 9, letterSpacing: '0.08em',
+  };
+  const tagStyle = {
+    display: 'inline-block', padding: '3px 7px', borderRadius: 3,
+    fontFamily: SG.sans, fontWeight: 700, fontSize: 8, letterSpacing: '0.14em', textTransform: 'uppercase',
+  };
+  return (
+    <div style={{ padding: '16px 14px', display: 'flex', flexDirection: 'column', gap: 12 }}>
+      {/* color row */}
+      <div style={{ display: 'flex', gap: 4 }}>
+        {[SG.royal, SG.cream, SG.orange, SG.peri, SG.ink].map((c, i) => (
+          <div key={i} style={{ flex: 1, height: 18, background: c, borderRadius: 3, border: c === SG.cream ? `1px solid ${SG.creamDk}` : 'none' }} />
+        ))}
+      </div>
+      {/* buttons */}
+      <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap' }}>
+        <span style={{ ...btnStyle, background: SG.royal, color: SG.cream }}>Primary</span>
+        <span style={{ ...btnStyle, background: 'transparent', color: SG.royal, border: `1.5px solid ${SG.royal}` }}>Outline</span>
+        <span style={{ ...btnStyle, background: SG.ink, color: SG.cream }}>Dark</span>
+      </div>
+      {/* tags */}
+      <div style={{ display: 'flex', gap: 5 }}>
+        <span style={{ ...tagStyle, background: SG.royal, color: SG.cream }}>UI/UX</span>
+        <span style={{ ...tagStyle, background: SG.orange, color: SG.cream }}>WEB</span>
+        <span style={{ ...tagStyle, background: 'transparent', color: SG.royal, border: `1px solid ${SG.royal}` }}>BRAND</span>
+      </div>
+      {/* mini card */}
+      <div style={{ background: '#FFFFFF', borderRadius: 6, overflow: 'hidden', border: `1px solid ${SG.creamDk}` }}>
+        <div style={{ height: 20, background: SG.peri }} />
+        <div style={{ padding: '6px 8px' }}>
+          <div style={{ fontFamily: SG.sans, fontWeight: 800, fontSize: 10, color: SG.royal }}>Project Title</div>
+          <div style={{ marginTop: 4, paddingTop: 4, borderTop: `1px solid ${SG.creamDk}`, display: 'flex', justifyContent: 'space-between', fontFamily: SG.mono, fontSize: 8, color: SG.orange, letterSpacing: '0.1em' }}>
+            <span>2025</span><span>VIEW →</span>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -217,7 +273,7 @@ function HubDocs() {
         <div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
             <div style={{ width: 28, height: 3, background: SG.orange }} />
-            <div style={{ fontFamily: SG.mono, fontSize: 12, color: SG.royal, letterSpacing: '0.28em', fontWeight: 700 }}>DOCS · 4</div>
+            <div style={{ fontFamily: SG.mono, fontSize: 12, color: SG.royal, letterSpacing: '0.28em', fontWeight: 700 }}>DOCS · 5</div>
           </div>
           <h2 style={{ margin: '14px 0 0', fontFamily: SG.sans, fontWeight: 800, fontSize: 52, color: SG.royal, lineHeight: 0.96, letterSpacing: '-0.02em' }}>
             네 권의 문서.<br/>하나의 시스템.
@@ -229,7 +285,11 @@ function HubDocs() {
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 20 }}>
-        {DOCS.map((d) => <HubDocCard key={d.no} d={d} />)}
+        {DOCS.slice(0, 4).map((d) => <HubDocCard key={d.no} d={d} />)}
+      </div>
+      {/* 05 · Web Components — full-width */}
+      <div style={{ marginTop: 20 }}>
+        <HubDocCard d={DOCS[4]} />
       </div>
     </section>
   );
