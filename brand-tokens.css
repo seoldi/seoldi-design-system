@@ -1,0 +1,73 @@
+/* =============================================================
+   SEOLDI GRAPHICS — Brand Design Tokens v1.0 (2025.05)
+   사용법: HTML <link rel="stylesheet" href="brand-tokens.css">
+          또는 프로젝트 CSS 상단에 @import 후 var(--sg-*) 사용
+   ============================================================= */
+
+:root {
+
+  /* ── Colors ────────────────────────────────────────────── */
+  --sg-royal:     #0D21A5;   /* Primary — 주 배경, 강조 영역, 로고 S */
+  --sg-royal-dk:  #091676;   /* 블루 배경 위 중첩 박스용 */
+  --sg-cream:     #F5F0E8;   /* Base — 기본 배경, 반전 텍스트 */
+  --sg-cream-dk:  #E8E0D2;   /* 크림 배경 구분선/테두리 */
+  --sg-orange:    #F97316;   /* Accent — !, CTA, 강조 라인 전용 (배경 금지) */
+  --sg-peri:      #B9C7F8;   /* Periwinkle — 블루 위 서브 텍스트 */
+  --sg-ink:       #1A1A1A;   /* Ink Black — 다크 베이스, 본문 */
+  --sg-ink-soft:  #2A2A2A;   /* 인크 배경 위 중첩 박스용 */
+  --sg-white:     #FFFFFF;   /* UI 카드, 인쇄용 */
+
+  /* ── Color Usage Ratio (참고 — 비율 가이드) ─────────────
+     Royal Blue  60%  — 주 배경, 강조 영역
+     Cream       25%  — 베이스 배경
+     Orange      15%  — 포인트 전용
+  ──────────────────────────────────────────────────────── */
+
+  /* ── Typography ─────────────────────────────────────────── */
+  --sg-font-en:   'Montserrat', 'Pretendard Variable', Pretendard, sans-serif;
+  --sg-font-kr:   'Pretendard Variable', Pretendard, 'Montserrat', sans-serif;
+  --sg-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ── Type Scale (Montserrat 기준) ────────────────────────── */
+  --sg-text-display: 96px;   /* 카드 헤드라인, 슬로건 · fw 800 */
+  --sg-text-h1:      64px;   /* 섹션 제목 · fw 800 */
+  --sg-text-h2:      40px;   /* 서브섹션 · fw 700 */
+  --sg-text-body-l:  24px;   /* 리드 본문 · fw 600 */
+  --sg-text-body:    16px;   /* 기본 본문 · fw 400 */
+  --sg-text-caption: 12px;   /* 메타, 라벨 · fw 600 */
+
+  /* ── Logo Sizes ──────────────────────────────────────────── */
+  --sg-logo-web:  40px;      /* 웹 헤더 최소 */
+  --sg-logo-ui:   24px;      /* UI 컴포넌트 */
+  --sg-logo-min:  16px;      /* 디지털 절대 최소 */
+  /* 인쇄물 최소 폭: 10mm */
+
+  /* ── Breakpoints ─────────────────────────────────────────── */
+  --sg-bp-tablet: 1200px;
+  --sg-bp-mobile:  768px;
+
+  /* ── SNS Card Ratio ──────────────────────────────────────── */
+  /* 4:5 = 1080 × 1350px */
+}
+
+/* ── Utility Classes ─────────────────────────────────────── */
+
+/* 배경 */
+.sg-bg-royal  { background-color: var(--sg-royal); }
+.sg-bg-cream  { background-color: var(--sg-cream); }
+.sg-bg-ink    { background-color: var(--sg-ink); }
+
+/* 텍스트 */
+.sg-text-royal  { color: var(--sg-royal); }
+.sg-text-cream  { color: var(--sg-cream); }
+.sg-text-orange { color: var(--sg-orange); }
+.sg-text-peri   { color: var(--sg-peri); }
+.sg-text-ink    { color: var(--sg-ink); }
+
+/* 오렌지 액센트 라인 (포인트 라인 공통 패턴) */
+.sg-accent-line {
+  display: block;
+  width: 56px;
+  height: 4px;
+  background-color: var(--sg-orange);
+}

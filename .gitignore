@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+
+# Uploads / temp
+source/uploads/*.png
+source/uploads/*.jpg
+source/uploads/*.jpeg
+source/uploads/*.gif
+
+# Keep .md files in uploads (package docs)
+!source/uploads/*.md
+
+# Node (if added later)
+node_modules/
+dist/
+.env
